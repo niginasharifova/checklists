@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C03C16492812CBDD00207C0E /* GroupDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03C16482812CBDD00207C0E /* GroupDetailsTableViewController.swift */; };
+		C03C164C2812CE1F00207C0E /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03C164B2812CE1F00207C0E /* ChecklistItem.swift */; };
+		C03C16532812D0C200207C0E /* ChecklistItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03C16522812D0C200207C0E /* ChecklistItemCell.swift */; };
 		C03DDEC828099D4800C04888 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03DDEC728099D4800C04888 /* AppDelegate.swift */; };
 		C03DDECA28099D4800C04888 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03DDEC928099D4800C04888 /* SceneDelegate.swift */; };
 		C03DDECC28099D4800C04888 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03DDECB28099D4800C04888 /* MainViewController.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C03C16482812CBDD00207C0E /* GroupDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsTableViewController.swift; sourceTree = "<group>"; };
+		C03C164B2812CE1F00207C0E /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
+		C03C16522812D0C200207C0E /* ChecklistItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItemCell.swift; sourceTree = "<group>"; };
 		C03DDEC428099D4800C04888 /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03DDEC728099D4800C04888 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C03DDEC928099D4800C04888 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C03C16462812C9CF00207C0E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C03DDECB28099D4800C04888 /* MainViewController.swift */,
+				C03C16482812CBDD00207C0E /* GroupDetailsTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		C03DDEBB28099D4800C04888 = {
 			isa = PBXGroup;
 			children = (
@@ -60,11 +75,11 @@
 		C03DDEC628099D4800C04888 /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
+				C03C16462812C9CF00207C0E /* Controllers */,
 				C04A23A1280D9C77004176C4 /* Cells */,
 				C04A239C280D91C7004176C4 /* Models */,
 				C03DDEC728099D4800C04888 /* AppDelegate.swift */,
 				C03DDEC928099D4800C04888 /* SceneDelegate.swift */,
-				C03DDECB28099D4800C04888 /* MainViewController.swift */,
 				C03DDECD28099D4800C04888 /* Main.storyboard */,
 				C03DDED028099D4B00C04888 /* Assets.xcassets */,
 				C03DDED228099D4B00C04888 /* LaunchScreen.storyboard */,
@@ -77,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				C04A239D280D9261004176C4 /* ChecklistGroup.swift */,
+				C03C164B2812CE1F00207C0E /* ChecklistItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -85,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				C04A23A2280D9CCD004176C4 /* GroupTableViewCell.swift */,
+				C03C16522812D0C200207C0E /* ChecklistItemCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -161,6 +178,9 @@
 			files = (
 				C03DDECC28099D4800C04888 /* MainViewController.swift in Sources */,
 				C03DDEC828099D4800C04888 /* AppDelegate.swift in Sources */,
+				C03C164C2812CE1F00207C0E /* ChecklistItem.swift in Sources */,
+				C03C16532812D0C200207C0E /* ChecklistItemCell.swift in Sources */,
+				C03C16492812CBDD00207C0E /* GroupDetailsTableViewController.swift in Sources */,
 				C04A239E280D9261004176C4 /* ChecklistGroup.swift in Sources */,
 				C04A23A3280D9CCD004176C4 /* GroupTableViewCell.swift in Sources */,
 				C03DDECA28099D4800C04888 /* SceneDelegate.swift in Sources */,

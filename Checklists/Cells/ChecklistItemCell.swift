@@ -1,25 +1,24 @@
 //
-//  ChecklistGroupTableViewCell.swift
+//  ChecklistItemCell.swift
 //  Checklists
 //
-//  Created by beehive-iOS on 4/18/22.
+//  Created by beehive-iOS on 4/22/22.
 //
 
 import UIKit
 
-class GroupTableViewCell: UITableViewCell {
+class ChecklistItemCell: UITableViewCell {
+    
+    @IBOutlet weak var itemNameLabel: UILabel!
+    
+    @IBOutlet weak var itemImage: UIImageView!
 
-    @IBOutlet weak var groupTitleLabel: UILabel!
-    
-    @IBOutlet weak var iconView: UIImageView!
-    
-    @IBOutlet weak var subtitle: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
