@@ -201,13 +201,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthdays" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aS-DT-6Xm">
-                                            <rect key="frame" x="75" y="8" width="83" height="24"/>
+                                            <rect key="frame" x="72" y="8" width="83" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZ1-RK-giZ">
-                                            <rect key="frame" x="75" y="38.333333333333336" width="37.333333333333343" height="18"/>
+                                            <rect key="frame" x="72" y="38.333333333333336" width="37.333333333333343" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -215,11 +215,11 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="NcK-i0-uIz" firstAttribute="top" secondItem="TCx-UU-AiG" secondAttribute="top" constant="8" id="2Zj-cj-HqR"/>
+                                        <constraint firstItem="9aS-DT-6Xm" firstAttribute="leading" secondItem="NcK-i0-uIz" secondAttribute="trailing" constant="8" id="ER5-eE-d1s"/>
                                         <constraint firstItem="NcK-i0-uIz" firstAttribute="leading" secondItem="TCx-UU-AiG" secondAttribute="leading" constant="16" id="GoK-Ri-kxW"/>
                                         <constraint firstAttribute="bottom" secondItem="NcK-i0-uIz" secondAttribute="bottom" constant="8" id="PPg-rB-Hjr"/>
                                         <constraint firstItem="9aS-DT-6Xm" firstAttribute="top" secondItem="NcK-i0-uIz" secondAttribute="top" id="ZQF-78-cbd"/>
-                                        <constraint firstAttribute="trailing" secondItem="9aS-DT-6Xm" secondAttribute="trailing" constant="270" id="gQ9-dU-QcF"/>
-                                        <constraint firstItem="9aS-DT-6Xm" firstAttribute="leading" secondItem="PZ1-RK-giZ" secondAttribute="leading" id="taO-J9-jH0"/>
+                                        <constraint firstItem="PZ1-RK-giZ" firstAttribute="leading" secondItem="NcK-i0-uIz" secondAttribute="trailing" constant="8" id="qqb-s6-vG5"/>
                                         <constraint firstItem="PZ1-RK-giZ" firstAttribute="bottom" secondItem="NcK-i0-uIz" secondAttribute="bottom" id="u39-lD-Ev4"/>
                                     </constraints>
                                 </tableViewCellContentView>
