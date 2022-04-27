@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q62-gu-XQZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Q3-0e-AUA">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -74,7 +74,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q2I-7l-jFV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="667.28971962616822" y="13.606911447084235"/>
+            <point key="canvasLocation" x="1567.2897196261681" y="13.606911447084235"/>
         </scene>
         <!--Add Item Table View Controller-->
         <scene sceneID="Fwl-hK-jgN">
@@ -152,7 +152,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="vZ5-j1-EKn">
-                                            <rect key="frame" x="194" y="8" width="218" height="34"/>
+                                            <rect key="frame" x="194.33333333333337" y="8" width="217.66666666666663" height="34.666666666666664"/>
                                         </datePicker>
                                     </subviews>
                                     <constraints>
@@ -174,12 +174,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vx9-2B-PMu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1380.8411214953271" y="13.606911447084235"/>
+            <point key="canvasLocation" x="2280.8411214953271" y="13.606911447084235"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Checklists-->
         <scene sceneID="VWT-Rb-MR4">
             <objects>
-                <tableViewController id="gkO-7y-XjU" customClass="MainViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Checklists" id="gkO-7y-XjU" customClass="MainViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="72Y-ci-uvz">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -235,8 +235,27 @@
                             <outlet property="delegate" destination="gkO-7y-XjU" id="ynB-Bo-0WE"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Checklists" largeTitleDisplayMode="always" id="CFB-Hi-Mum"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QNV-XR-PXW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810.28037383177571" y="13.606911447084235"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MVx-z2-0nj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Q3-0e-AUA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="HVw-kH-aoE">
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gkO-7y-XjU" kind="relationship" relationship="rootViewController" id="poR-vF-bgE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Le2-WB-q79" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-89.719626168224295" y="13.606911447084235"/>
         </scene>
