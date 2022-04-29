@@ -9,13 +9,8 @@ import UIKit
 
 class GroupDetailsTableViewController: UITableViewController {
     
-    let items: [ChecklistItem] = [
-        ChecklistItem(isChecked: true, nameItem: "Walk the dog"),
-        ChecklistItem(isChecked: true, nameItem: "Brush teeth"),
-        ChecklistItem(isChecked: false, nameItem: "Learn iOS development"),
-        ChecklistItem(isChecked: false, nameItem: "Soccer practice"),
-        ChecklistItem(isChecked: true, nameItem: "Eat icecream"),
-        ChecklistItem(isChecked: false, nameItem: "Dance in the rain")
+    var items: [ChecklistItem] = [
+        
     ]
     
         
@@ -38,6 +33,7 @@ class GroupDetailsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return items.count
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item: ChecklistItem = items[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItemCell") as! ChecklistItemCell
@@ -50,6 +46,14 @@ class GroupDetailsTableViewController: UITableViewController {
 //        }
         return cell
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GroupDetailsToAddItem",
+           let  vc = segue.destination as? AddItemTableViewController,
+           let indexPath = tableView.indexPathForSelectedRow {
+            vc.title = "Edit item"
+            vc.item = items[indexPath.row]
+               }
+    }
     
 }

@@ -10,13 +10,11 @@ import UIKit
 class MainViewController: UITableViewController {
     
     let groups: [ChecklistGroup] = [
-        ChecklistGroup(title: "Birthdays", imageName: "Birthdays", subtitle: "All done"),
-        ChecklistGroup(title: "Business Stuff", imageName: "Folder", subtitle: "No items"),
-        ChecklistGroup(title: "Chores", imageName: "Chores", subtitle: "2 remaining"),
-        ChecklistGroup(title: "Groceries", imageName: "Groceries", subtitle: "2 remaining"),
-        ChecklistGroup(title: "To Do", imageName: "Inbox", subtitle: "3 remaining")
-        
-        
+        ChecklistGroup(title: "Birthdays", imageName: "Birthdays", subtitle: "All done", items: [ChecklistItem(isChecked: true, nameItem: "BD")]),
+        ChecklistGroup(title: "Business Stuff", imageName: "Folder", subtitle: "No items", items: [ChecklistItem(isChecked: true, nameItem: "BS")]),
+        ChecklistGroup(title: "Chores", imageName: "Chores", subtitle: "2 remaining", items: [ChecklistItem(isChecked: true, nameItem: "Chores")]),
+        ChecklistGroup(title: "Groceries", imageName: "Groceries", subtitle: "2 remaining", items: [ChecklistItem(isChecked: false, nameItem: "Groceries")]),
+        ChecklistGroup(title: "To Do", imageName: "Inbox", subtitle: "3 remaining", items: [ChecklistItem(isChecked: true, nameItem: "To do")])
     ]
 
     override func viewDidLoad() {
@@ -28,13 +26,20 @@ class MainViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath)
-        let group: ChecklistGroup = groups[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell") as! GroupTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupTableViewCell
+        let group = groups[indexPath.row]
         cell.groupTitleLabel.text = group.title
         cell.imageView?.image = UIImage(named: (group.imageName))
         cell.subtitle?.text = group.subtitle
         return cell
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MainToGroupDetails",
+        let vc = segue.destination as? GroupDetailsTableViewController,
+        let indexPath = tableView.indexPathForSelectedRow {
+            vc.items = groups[indexPath.row].items
+            }
+        
+        
     }
 }

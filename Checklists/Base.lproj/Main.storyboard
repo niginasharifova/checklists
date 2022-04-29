@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Group Details Table View Controller-->
+        <!--To do-->
         <scene sceneID="uZq-Kr-8q9">
             <objects>
                 <tableViewController id="Q62-gu-XQZ" customClass="GroupDetailsTableViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,6 +63,7 @@
                                 <connections>
                                     <outlet property="itemImage" destination="SOz-5Y-THN" id="FvZ-G1-8dW"/>
                                     <outlet property="itemNameLabel" destination="HKO-gv-L5i" id="lrL-7h-Wx7"/>
+                                    <segue destination="5Y6-mq-eId" kind="show" identifier="GroupDetailsToAddItem" id="5G0-dq-MwA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -71,12 +72,19 @@
                             <outlet property="delegate" destination="Q62-gu-XQZ" id="dp4-MF-80o"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="To do" largeTitleDisplayMode="never" id="zOv-c0-eEB">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="WqA-bi-69J">
+                            <connections>
+                                <segue destination="5Y6-mq-eId" kind="show" id="2Jm-Wf-6i0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q2I-7l-jFV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1567.2897196261681" y="13.606911447084235"/>
         </scene>
-        <!--Add Item Table View Controller-->
+        <!--Add Item-->
         <scene sceneID="Fwl-hK-jgN">
             <objects>
                 <tableViewController id="5Y6-mq-eId" customClass="AddItemTableViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -171,6 +179,9 @@
                             <outlet property="delegate" destination="5Y6-mq-eId" id="Cga-yS-Khj"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Add Item" largeTitleDisplayMode="never" id="OkX-Qr-Xw8">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="YL0-Z7-vEK"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vx9-2B-PMu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -227,6 +238,7 @@
                                     <outlet property="groupTitleLabel" destination="9aS-DT-6Xm" id="ZUC-rS-ofd"/>
                                     <outlet property="iconView" destination="NcK-i0-uIz" id="8Nf-gY-e73"/>
                                     <outlet property="subtitle" destination="PZ1-RK-giZ" id="vpG-32-msn"/>
+                                    <segue destination="Q62-gu-XQZ" kind="show" identifier="MainToGroupDetails" id="WVp-fd-X1u"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -235,7 +247,13 @@
                             <outlet property="delegate" destination="gkO-7y-XjU" id="ynB-Bo-0WE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Checklists" largeTitleDisplayMode="always" id="CFB-Hi-Mum"/>
+                    <navigationItem key="navigationItem" title="Checklists" largeTitleDisplayMode="always" id="CFB-Hi-Mum">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="DsB-Qc-lat">
+                            <connections>
+                                <segue destination="5Y6-mq-eId" kind="show" identifier="" id="h49-Ex-MwP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QNV-XR-PXW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -260,10 +278,14 @@
             <point key="canvasLocation" x="-89.719626168224295" y="13.606911447084235"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5G0-dq-MwA"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="chevron.compact.right" catalog="system" width="64" height="128"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
