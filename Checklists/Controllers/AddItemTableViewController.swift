@@ -24,7 +24,15 @@ class AddItemTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        if let item = item {
+            if item.remindMe {
+                return 3
+            } else  {
+            return 2
+            }
+        } else {
+            return 3
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,11 +45,20 @@ class AddItemTableViewController: UITableViewController {
             if let item = item {
                 cell.textField.text = item.nameItem }
                 return cell
+            
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SwitchTableViewCell", for: indexPath) as! SwitchTableViewCell
+            cell.switchRemind.setOn(item?.remindMe ?? false, animated: true)
+            cell.onSwitchChanged = {[weak self] in
+                self?.item?.remindMe = cell.switchRemind.isOn
+                tableView.reloadData()
+            }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DateTableViewCell", for: indexPath) as! DateTableViewCell
+            if let item = item, let date = item.dueDate {
+                cell.datePicker.setDate(date, animated: true)
+            }
             return cell
         }
     }

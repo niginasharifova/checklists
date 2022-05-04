@@ -129,6 +129,9 @@
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cSU-S1-DX7">
                                             <rect key="frame" x="363" y="7.9999999999999982" width="51" height="31.333333333333329"/>
+                                            <connections>
+                                                <action selector="switchDidChange:" destination="w6C-ix-bNj" eventType="valueChanged" id="aYU-ZK-NeL"/>
+                                            </connections>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1e-ap-PWp">
                                             <rect key="frame" x="35.999999999999993" y="13.333333333333336" width="85.333333333333314" height="21"/>
@@ -145,6 +148,9 @@
                                         <constraint firstAttribute="bottom" secondItem="cSU-S1-DX7" secondAttribute="bottom" constant="8" id="oeg-hf-1qh"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="switchRemind" destination="cSU-S1-DX7" id="cwX-f7-t5d"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DateTableViewCell" id="T78-gw-gae" customClass="DateTableViewCell" customModule="Checklists" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="139.66666793823242" width="428" height="50.666667938232422"/>
@@ -172,6 +178,9 @@
                                         <constraint firstItem="vZ5-j1-EKn" firstAttribute="leading" secondItem="rQO-uZ-3s2" secondAttribute="trailing" constant="89.333333333333314" id="iz5-mQ-TsW"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="datePicker" destination="vZ5-j1-EKn" id="jNF-Ef-bJJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
