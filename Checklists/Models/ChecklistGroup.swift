@@ -10,8 +10,27 @@ import Foundation
 struct ChecklistGroup {
     var title: String
     var imageName: String
-    var subtitle: String
+//    var subtitle: String
     var items: [ChecklistItem]
+    
+    func getRemainings () -> String {
+        var isAllDone = true
+        for item in items {
+            if item.isChecked == false {
+                isAllDone = false
+            }
+        }
+        if items.isEmpty {
+            return "(no items)"
+        } else if !isAllDone, items.count != 0 {
+            return "\(items.count) remaining"
+        }
+        if isAllDone {
+            return "All done"
+        } else {
+            return "Incorrect data"
+        }
+    }
 
     
     // 1. all done

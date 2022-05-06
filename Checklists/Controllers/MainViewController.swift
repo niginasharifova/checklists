@@ -10,11 +10,11 @@ import UIKit
 class MainViewController: UITableViewController {
     
     let groups: [ChecklistGroup] = [
-        ChecklistGroup(title: "Birthdays", imageName: "Birthdays", subtitle: "All done", items: [ChecklistItem(isChecked: true, nameItem: "BD", remindMe: false, dueDate: nil)]),
-        ChecklistGroup(title: "Business Stuff", imageName: "Folder", subtitle: "No items", items: [ChecklistItem(isChecked: true, nameItem: "BS", remindMe: true, dueDate: Date())]),
-        ChecklistGroup(title: "Chores", imageName: "Chores", subtitle: "2 remaining", items: [ChecklistItem(isChecked: true, nameItem: "Chores", remindMe: false)]),
-        ChecklistGroup(title: "Groceries", imageName: "Groceries", subtitle: "2 remaining", items: [ChecklistItem(isChecked: false, nameItem: "Groceries", remindMe: true, dueDate: Date())]),
-        ChecklistGroup(title: "To Do", imageName: "Inbox", subtitle: "3 remaining", items: [ChecklistItem(isChecked: true, nameItem: "To do", remindMe: false)])
+        ChecklistGroup(title: "Birthdays", imageName: "Birthdays", items: [ChecklistItem(isChecked: true, nameItem: "BD", remindMe: false, dueDate: nil)]),
+        ChecklistGroup(title: "Business Stuff", imageName: "Folder", items: [ChecklistItem(isChecked: true, nameItem: "BS", remindMe: true, dueDate: Date())]),
+        ChecklistGroup(title: "Chores", imageName: "Chores", items: []),
+        ChecklistGroup(title: "Groceries", imageName: "Groceries", items: [ChecklistItem(isChecked: false, nameItem: "Groceries", remindMe: true, dueDate: Date())]),
+        ChecklistGroup(title: "To Do", imageName: "Inbox", items: [ChecklistItem(isChecked: true, nameItem: "To do", remindMe: false)])
     ]
 
     override func viewDidLoad() {
@@ -30,9 +30,10 @@ class MainViewController: UITableViewController {
         let group = groups[indexPath.row]
         cell.groupTitleLabel.text = group.title
         cell.imageView?.image = UIImage(named: (group.imageName))
-        cell.subtitle?.text = group.subtitle
+        cell.subtitle?.text = group.getRemainings()
         return cell
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MainToGroupDetails",
         let vc = segue.destination as? GroupDetailsTableViewController,
