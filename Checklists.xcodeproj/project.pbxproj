@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C03BA769282E8DD700D01F4C /* GroupDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03BA768282E8DD700D01F4C /* GroupDetailsProtocol.swift */; };
 		C03C16492812CBDD00207C0E /* GroupDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03C16482812CBDD00207C0E /* GroupDetailsTableViewController.swift */; };
 		C03C164C2812CE1F00207C0E /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03C164B2812CE1F00207C0E /* ChecklistItem.swift */; };
 		C03C16532812D0C200207C0E /* ChecklistItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03C16522812D0C200207C0E /* ChecklistItemCell.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C03BA768282E8DD700D01F4C /* GroupDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsProtocol.swift; sourceTree = "<group>"; };
 		C03C16482812CBDD00207C0E /* GroupDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsTableViewController.swift; sourceTree = "<group>"; };
 		C03C164B2812CE1F00207C0E /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		C03C16522812D0C200207C0E /* ChecklistItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItemCell.swift; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C03BA767282E8D8800D01F4C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C03BA768282E8DD700D01F4C /* GroupDetailsProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		C03C16462812C9CF00207C0E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 		C03DDEC628099D4800C04888 /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
+				C03BA767282E8D8800D01F4C /* Protocols */,
 				C03C16462812C9CF00207C0E /* Controllers */,
 				C04A23A1280D9C77004176C4 /* Cells */,
 				C04A239C280D91C7004176C4 /* Models */,
@@ -193,6 +204,7 @@
 				C03DBF2D2816BC7A00EE8801 /* SwitchTableViewCell.swift in Sources */,
 				C03DBF302816BC8900EE8801 /* DateTableViewCell.swift in Sources */,
 				C03C164C2812CE1F00207C0E /* ChecklistItem.swift in Sources */,
+				C03BA769282E8DD700D01F4C /* GroupDetailsProtocol.swift in Sources */,
 				C03C16532812D0C200207C0E /* ChecklistItemCell.swift in Sources */,
 				C03C16492812CBDD00207C0E /* GroupDetailsTableViewController.swift in Sources */,
 				C03C165F2812E7BA00207C0E /* AddItemTableViewController.swift in Sources */,

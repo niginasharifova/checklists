@@ -9,14 +9,10 @@ import UIKit
 
 class GroupDetailsTableViewController: UITableViewController {
     
-    var items: [ChecklistItem] = [
-        
-    ]
+    var group: ChecklistGroup!
+    var delegate: GroupDetailsProtocol?
     
-        
     
-        
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,11 +27,11 @@ class GroupDetailsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return items.count
+        return group.items.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item: ChecklistItem = items[indexPath.row]
+        let item: ChecklistItem = group.items[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItemCell") as! ChecklistItemCell
         cell.itemNameLabel.text = item.nameItem
         cell.itemImage.isHidden = !item.isChecked
@@ -52,8 +48,22 @@ class GroupDetailsTableViewController: UITableViewController {
            let  vc = segue.destination as? AddItemTableViewController,
            let indexPath = tableView.indexPathForSelectedRow {
             vc.title = "Edit item"
-            vc.item = items[indexPath.row]
+            vc.item = group.items[indexPath.row]
                }
     }
+    // MARK: - UITableViewDelegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("did tap \(indexPath.row)")
+    }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Удаляем данные из массива
+        group.items.remove(at: indexPath.row)
+
+        //Удалить ячейку из самой таблицы
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+        
+        // delegate
+        delegate?.didDeleteItem(at: indexPath.row, with: group.title)
+    }
 }
