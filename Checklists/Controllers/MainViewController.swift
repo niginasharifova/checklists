@@ -31,6 +31,17 @@ class MainViewController: UITableViewController, GroupDetailsProtocol {
     // MARK: - ViewController's lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Подписываемся на нотификацию о создании заметки
+        NotificationCenter.default.addObserver(self, selector: #selector(handleAddNoteNotification), name: .noteHasBeenCreated, object: nil)
+    }
+    
+    @objc
+    func handleAddNoteNotification(_ notification: Notification) {
+        if let object = notification.object as? Int {
+        print("Обработка")
+            print("Получил значение: \(object)")
+        }
     }
     
     // MARK: - UITableView lifecycle

@@ -62,6 +62,9 @@ class AddItemTableViewController: UITableViewController {
             return cell
         }
     }
+    @IBAction func didTapDoneButton(_ sender: Any) {
+        NotificationCenter.default.post(name: .noteHasBeenCreated, object: 42)
+    }
 }
 
 

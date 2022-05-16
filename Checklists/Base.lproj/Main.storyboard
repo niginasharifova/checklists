@@ -189,7 +189,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Item" largeTitleDisplayMode="never" id="OkX-Qr-Xw8">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="YL0-Z7-vEK"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="YL0-Z7-vEK">
+                            <connections>
+                                <action selector="didTapDoneButton:" destination="5Y6-mq-eId" id="1ZD-2a-IzR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vx9-2B-PMu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -288,7 +292,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="h49-Ex-MwP"/>
+        <segue reference="2Jm-Wf-6i0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark" catalog="system" width="128" height="114"/>
